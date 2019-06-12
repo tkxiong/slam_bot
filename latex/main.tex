@@ -128,23 +128,38 @@ Overall, both the 2D and 3D map quality looks good.
 
 \begin{figure}[thpb]
       \centering
+      \includegraphics[width=\linewidth]{kitchen_rtabviewer.png}
+      \caption{Kitchen and Dining RTAB-Viewer.}
+      \label{fig:robot7}
+\end{figure}
+
+\begin{figure}[thpb]
+      \centering
       \includegraphics[width=\linewidth]{custom_office_gridmap.png}
       \caption{Custom Office 2D Grid map.}
-      \label{fig:robot7}
+      \label{fig:robot8}
 \end{figure}
 
 \begin{figure}[thpb]
       \centering
       \includegraphics[width=\linewidth]{custom_office_rtabmap.png}
       \caption{Custom Office RTAB-Map.}
-      \label{fig:robot8}
+      \label{fig:robot9}
+\end{figure}
+
+\begin{figure}[thpb]
+      \centering
+      \includegraphics[width=\linewidth]{custom_office_rtabviewer.png}
+      \caption{Custom Office RTAB-Viewer.}
+      \label{fig:robot10}
 \end{figure}
 
 \section{Discussion}
 Based on the results, the RTAB-Mapping capable of generating accurate 2D gridmap. There is still some limitation on the RGB-D sensor. The 2D LIDAR able to detect longer distance than RGB-D sensor. The 2D LIDAR can easily map an empty room. In order to generate a full 3D map, the robot have to move nearer to the objects or wall.
+The main differences between the two worlds is the room area. In kitchen and dining world, the area is relatively small and the RTAB-Map generated fewer nodes to construct the graph. It perform lesser loop closure. In custom office world, the area is quite big and the robot have to cover more area. It will generate more errors and it require more node to construct the graph. It need to perform more loop closure.
 
 \section{Future work}
-RTAB-Map is suitable for large scale indoor mapping. The Gazebo editor tools is useful for creating a identical environment to test. 
+The future work can be developed an industrial cleaning robot. A differential wheel drive robot equiped with the Jetson TX2, Hokuyo 2d lidar and a kinect camera. The Jetson TX2 do not have sufficient compute power to perform real-time mapping of large area. It will need to log the sensors data first, the processing of the data can be performed on a desktop computer. Map annotation can be performed on the 2D grid-map to mark out the restricted area. 
 
 \bibliography{bib}
 \bibliographystyle{ieeetr}
