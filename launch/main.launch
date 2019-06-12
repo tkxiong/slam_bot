@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!--launch world-->
+    <!-- <include file="$(find slam_bot)/launch/kitchen_world.launch"/> -->
+    <include file="$(find slam_bot)/launch/custom_office.launch"/>
+    <!--launch rtab mapping-->
+    <include file="$(find slam_bot)/launch/localization.launch"/>
+    <!--launch rviz -->
+    <include file="$(find slam_bot)/launch/rviz.launch" />
+</launch>
