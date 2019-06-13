@@ -128,7 +128,7 @@ Overall, both the 2D and 3D map quality looks good.
 
 \begin{figure}[thpb]
       \centering
-      \includegraphics[width=\linewidth]{kitchen_rtabviewer.png}
+      \includegraphics[width=\linewidth]{kitchen_loopclosure.png}
       \caption{Kitchen and Dining RTAB-Viewer.}
       \label{fig:robot7}
 \end{figure}
@@ -149,17 +149,17 @@ Overall, both the 2D and 3D map quality looks good.
 
 \begin{figure}[thpb]
       \centering
-      \includegraphics[width=\linewidth]{custom_office_rtabviewer.png}
+      \includegraphics[width=\linewidth]{custom_office_loopclosure.png}
       \caption{Custom Office RTAB-Viewer.}
       \label{fig:robot10}
 \end{figure}
 
 \section{Discussion}
 Based on the results, the RTAB-Mapping capable of generating accurate 2D gridmap. There is still some limitation on the RGB-D sensor. The 2D LIDAR able to detect longer distance than RGB-D sensor. The 2D LIDAR can easily map an empty room. In order to generate a full 3D map, the robot have to move nearer to the objects or wall.
-The main differences between the two worlds is the room area. In kitchen and dining world, the area is relatively small and the RTAB-Map generated fewer nodes to construct the graph. It perform lesser loop closure. In custom office world, the area is quite big and the robot have to cover more area. It will generate more errors and it require more node to construct the graph. It need to perform more loop closure.
+Based on the two RTAB mapping experiment, the kitchen and dining world have more objects which make it easy to extract more features from the images. It can detect more loop closure. As for the custom office world, it has less objects and the area is big. There is less loop closure detected. In the RTAB mapping experiment, sometime loop closure occured may cause the map to be distorted. It is hard to see the benefit of loop closure in simulation world, as the sensors does not generate any noise.
 
 \section{Future work}
-The future work can be developed an industrial cleaning robot. A differential wheel drive robot equiped with the Jetson TX2, Hokuyo 2d lidar and a kinect camera. The Jetson TX2 do not have sufficient compute power to perform real-time mapping of large area. It will need to log the sensors data first, the processing of the data can be performed on a desktop computer. Map annotation can be performed on the 2D grid-map to mark out the restricted area. 
+The RTAB-Map can map a shopping mall, expo hall, school or factory. The industrial cleaning robot can used the map to navigate and clean the area. A differential wheel drive robot equiped with the Jetson TX2, Hokuyo 2d lidar and a kinect camera. The Jetson TX2 do not have sufficient compute power to perform real-time mapping of large area. It will need to log the sensors data first, the processing of the data can be performed on a desktop computer. Map annotation can be performed on the 2D grid-map to mark out the restricted area. 
 
 \bibliography{bib}
 \bibliographystyle{ieeetr}
